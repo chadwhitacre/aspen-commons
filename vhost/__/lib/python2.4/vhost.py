@@ -65,16 +65,20 @@ httplib.HTTPConnection.connect = connect
 class VHost:
     
     def __init__(self, config):
-        """Spawn the child processes here.
+        """Spawn the child processes.
         """
         root = config.paths.root
         __ = config.paths.__
-        self.hosts = {}
         
         sockdir = join(__, 'var', 'sock')
         if not isdir(sockdir):
-            os.makedirs(sockdir) # set mode to 1666
+            os.makedirs(sockdir) # set mode to 1666?
         
+        
+        # For each virtual host, we launch a child process and keep a proxy.
+        # ==================================================================
+        
+        self.hosts = {}
         for hostname in os.listdir(root):
             if hostname == '__' or hostname.startswith('.'):
                 continue
@@ -82,19 +86,17 @@ class VHost:
             if not isdir(hostroot):
                 continue
             hostsock = join(sockdir, hostname)
-            proc = subprocess.Popen(['aspen', '-r'+hostroot, '-a'+hostsock])
-            prox = proxy.TransparentProxy(force_host=hostsock)
-            self.hosts[hostname] = (proc, prox)
+            subprocess.Popen(['aspen', '-r'+hostroot, '-a'+hostsock])
+            self.hosts[hostname] = proxy.TransparentProxy(force_host=hostsock)
         
 
     def __call__(self, environ, start_response):
-        """Proxy to the child processes here.
+        """Proxy to the child processes.
         """
         host = environ.get('HTTP_HOST')
         if host is None:
             raise ValueError('No HTTP host provided.')
         if host not in self.hosts:
             raise ValueError("Don't know about %s" % host)
-        proc, prox = self.hosts[host]
-        return prox(environ, start_response)
+        return self.hosts[host](environ, start_response)
         
