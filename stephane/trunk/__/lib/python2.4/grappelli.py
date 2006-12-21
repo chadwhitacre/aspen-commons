@@ -6,7 +6,7 @@ import sys
 from django.core.handlers.wsgi import WSGIHandler
 
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'hotclub.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'stephane.settings'
 
 
 class Django(WSGIHandler):
