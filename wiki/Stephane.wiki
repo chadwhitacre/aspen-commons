@@ -9,7 +9,7 @@
 
 = Introduction =
 
-Stephane is a tiny shim that makes it trivially easy to serve [http://www.djangoproject.com/ Django] apps with [http://www.zetadev.com/software/aspen/ Aspen]. The only requirement is that you name your Django project `stephane`. Then place Stephane in the same directory as your project, and you're all set. Stephane adds `/usr/local/www/example.com` to your `PYTHONPATH`, so you can include any third-party modules that your site needs right next to your project package.
+Stephane is a tiny shim that makes it trivially easy to serve [http://www.djangoproject.com/ Django] apps with [http://www.zetadev.com/software/aspen/ Aspen]. The only requirement is that you name your Django project `stephane`. Then place Stephane in the same directory as your project, and you're all set. Stephane adds its parent directory to your `PYTHONPATH`, so you can include any third-party modules that your site needs right next to your project package.
 
 Here's what your filesystem will look like:
 
@@ -28,6 +28,6 @@ Here's what your filesystem will look like:
 
 Stephane is simply an Aspen magic directory pre-configured for Django. It includes a module called `grappelli` that adds the Aspen website root to `PYTHONPATH`, and configures Django using `stephane.settings`. It then tells Aspen to use Django's WSGI handler to serve all requests for this website.
 
-Please see [http://aspen-commons.googlecode.com/svn/stephane/ the Stephane source] and [http://www.zetadev.com/software/aspen/0.6/doc/html/extending.html the _Extending Aspen_ documentation] for a detailed understanding of how Stephane works.
+Please see [http://aspen-commons.googlecode.com/svn/stephane/ the Stephane source] and [http://www.zetadev.com/software/aspen/0.6/doc/html/extending.html the "Extending Aspen" documentation] for a detailed understanding of how Stephane works.
 
 Stephane Grappelli was Django Reinhardt's long-time sideman and violin player.
