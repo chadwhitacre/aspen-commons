@@ -14,4 +14,6 @@ Stephane is a tiny shim that makes it trivially easy to serve Django apps with A
 
 Stephane is simply an Aspen magic directory pre-configured for Django. It includes a module called grappelli which adds the Aspen root to PYTHONPATH, and configures Django using stephane.settings.
 
-Please see the "Extending Aspen" documentation for 
+Please see the "Extending Aspen" documentation for a detailed understanding of how Stephane works:
+
+http://www.zetadev.com/software/aspen/0.6/doc/html/extending.html
