@@ -1,4 +1,4 @@
-#summary Django + Aspen = Stephane
+#summary Aspen serving Django
 #labels Featured
 
 == Screencast ==
