@@ -7,7 +7,7 @@ http://tech.whit537.org/2006/12/screencast-django-aspen-stephane.html
 
 = Introduction =
 
-Stephane is a tiny shim that makes it trivially easy to serve Django apps with Aspen. The only requirement is that you name your Django project stephane. Then place Stephane in the same directory as your project, and you're all set.
+Stephane is a <a href="foo">tiny</a> shim that makes it trivially easy to serve Django apps with Aspen. The only requirement is that you name your Django project stephane. Then place Stephane in the same directory as your project, and you're all set.
 
 
 = Details =
