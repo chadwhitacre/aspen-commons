@@ -27,3 +27,5 @@ Stephane is simply an Aspen magic directory pre-configured for Django. It includ
 Please see the Stephane source and the _Extending Aspen_ documentation for a detailed understanding of how Stephane works:
 
 http://www.zetadev.com/software/aspen/0.6/doc/html/extending.html
+
+Stephane Grappelli was Django Reinhardt's long-time sideman and violin player.
