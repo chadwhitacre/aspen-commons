@@ -1,9 +1,13 @@
 #summary Django + Aspen = Stephane
 #labels Featured
 
-= Screencast =
+== Screencast ==
 
 http://tech.whit537.org/2006/12/screencast-django-aspen-stephane.html
+
+== Download ==
+
+http://aspen-commons.googlecode.com/files/stephane-snapshot.tgz
 
 = Introduction =
 
