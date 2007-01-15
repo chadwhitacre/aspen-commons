@@ -1,6 +1,10 @@
 #summary Aspen serving Django
 #labels Featured
 
+=Nota Bene=
+
+Stephane works with Aspen 0.6, and will be updated soon to work with Aspen 0.7.
+
 == Links ==
 
 || *download* || http://aspen-commons.googlecode.com/files/stephane-snapshot.tgz ||
