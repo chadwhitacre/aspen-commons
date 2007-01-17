@@ -20,7 +20,7 @@ Stephane is a tiny shim that makes it trivially easy to serve [http://www.django
   $ svn export http://aspen-commons.googlecode.com/svn/stephane/trunk/__
 }}}
 
-That's it. Stephane adds its parent directory to your `PYTHONPATH`, so you can include any third-party modules that your site needs right next to your project package.
+That's it. `~/www.example.com` will be on Django's `PYTHONPATH`, so you can include any third-party modules that your site needs right next to your project package.
 
 Here's what your filesystem will look like:
 
@@ -57,5 +57,4 @@ If DJANGO_SETTINGS_MODULE is unset, then it defaults to `stephane.settings`. You
 Please see [http://aspen-commons.googlecode.com/svn/stephane/trunk/ the Stephane source] and [http://www.zetadev.com/software/aspen/0.7/doc/html/extending.html the "Extending Aspen" documentation] for a detailed understanding of how Stephane works.
 
 Stephane Grappelli was Django Reinhardt's long-time sideman and violin player.
-
 
