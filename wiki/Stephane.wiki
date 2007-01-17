@@ -15,10 +15,10 @@ Stephane is a tiny shim that makes it trivially easy to serve [http://www.django
 == Installation ==
 
 {{{
-  $ mkdir ~/www.example.com
-  $ cd ~/www.example.com
-  $ django-admin.py startproject <foo>
-  $ svn export http://aspen-commons.googlecode.com/svn/stephane/trunk/__
+$ mkdir ~/www.example.com
+$ cd ~/www.example.com
+$ django-admin.py startproject <foo>
+$ svn export http://aspen-commons.googlecode.com/svn/stephane/trunk/__
 }}}
 
 `~/www.example.com` will be on Django's `PYTHONPATH`, so you can include any third-party modules right next to your project package. Here's what your filesystem will look like:
@@ -36,12 +36,12 @@ Stephane is a tiny shim that makes it trivially easy to serve [http://www.django
 Now [http://www.zetadev.com/software/aspen/0.7/doc/html/installation.html install Aspen], and:
 
 {{{
-  $ cd ~/www.example.com
-  $ export DJANGO_SETTINGS_MODULE=<foo>.settings
-  $ aspen
-  launching child process
-  starting child server
-  aspen starting on ('0.0.0.0', 8080)
+$ cd ~/www.example.com
+$ export DJANGO_SETTINGS_MODULE=<foo>.settings
+$ aspen
+launching child process
+starting child server
+aspen starting on ('0.0.0.0', 8080)
 }}}
 
 Congratulations! Aspen is running in [http://www.zetadev.com/software/aspen/0.7/doc/html/environment.html development mode], and will restart whenever your project's Python source files change.
