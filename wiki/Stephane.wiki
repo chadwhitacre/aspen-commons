@@ -48,7 +48,7 @@ Congratulations! Aspen is running in [http://www.zetadev.com/software/aspen/0.7/
 
 = Details =
 
-Stephane is trivial: 8 lines in 2 files. It is [http://www.zetadev.com/software/aspen/0.7/doc/html/tutorial-learned.html an Aspen magic directory] pre-configured for Django. It includes a module called `grappelli` that adds the Aspen website root to `PYTHONPATH`, and configures Django using the DJANGO_SETTINGS_MODULE environment variable. It then tells Aspen to use Django's WSGI handler to serve all requests for this website.
+Stephane is trivial: 10 lines in 2 files. It is [http://www.zetadev.com/software/aspen/0.7/doc/html/tutorial-learned.html an Aspen magic directory] pre-configured for Django. It includes a module called `grappelli` that adds the Aspen website root to `PYTHONPATH`, and configures Django using the DJANGO_SETTINGS_MODULE environment variable. It then tells Aspen to use Django's WSGI handler to serve all requests for this website.
 
 If DJANGO_SETTINGS_MODULE is unset, then it defaults to `stephane.settings`. You are also free to set this directly in [http://aspen-commons.googlecode.com/svn/stephane/trunk/__/lib/python2.x/grappelli.py __/lib/python2.x/grappelli.py]
 
