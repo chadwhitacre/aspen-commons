@@ -27,7 +27,7 @@ Here's what your filesystem will look like:
 {{{
 /usr/local/www/example.com/             <= website root; added to PYTHONPATH
 /usr/local/www/example.com/__/          <= Stephane (an Aspen "magic directory")
-/usr/local/www/example.com/stephane/    <= your Django project
+/usr/local/www/example.com/<foo>/       <= your Django project
 /usr/local/www/example.com/geopy/       <= any other modules you need
 /usr/local/www/example.com/README.aspen <= automatically added by Aspen
 }}}
@@ -45,7 +45,7 @@ Now [http://www.zetadev.com/software/aspen/0.7/doc/html/installation.html instal
   aspen starting on ('0.0.0.0', 8080)
 }}}
 
-Congratulations!
+Congratulations! Aspen is running in [http://www.zetadev.com/software/aspen/0.7/doc/html/environment.html development mode], and will restart whenever your project's Python source files change.
 
 
 = Details =
@@ -57,7 +57,6 @@ If DJANGO_SETTINGS_MODULE is unset, then it defaults to `stephane.settings`. You
 Please see [http://aspen-commons.googlecode.com/svn/stephane/trunk/ the Stephane source] and [http://www.zetadev.com/software/aspen/0.7/doc/html/extending.html the "Extending Aspen" documentation] for a detailed understanding of how Stephane works.
 
 Stephane Grappelli was Django Reinhardt's long-time sideman and violin player.
-
 
 
 
