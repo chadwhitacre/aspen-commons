@@ -33,7 +33,7 @@ $ svn export http://aspen-commons.googlecode.com/svn/stephane/trunk/__
 
 == Usage ==
 
-Now [http://www.zetadev.com/software/aspen/0.7/doc/html/installation.html install Aspen], and:
+Now [http://www.zetadev.com/software/aspen/latest/doc/html/installation.html install Aspen], and:
 
 {{{
 $ cd ~/www.example.com
@@ -44,15 +44,19 @@ starting child server
 aspen starting on ('0.0.0.0', 8080)
 }}}
 
-Congratulations! Aspen is running in [http://www.zetadev.com/software/aspen/0.7/doc/html/environment.html development mode], and will restart whenever your project's Python source files change.
+Congratulations! Aspen is running in [http://www.zetadev.com/software/aspen/latest/doc/html/environment.html development mode], and will restart whenever your project files change.
 
 
 = Details =
 
-Stephane is trivial: 10 lines in 2 files. It is [http://www.zetadev.com/software/aspen/0.7/doc/html/tutorial-learned.html an Aspen magic directory] pre-configured for Django. It includes a module called `grappelli` that adds the Aspen website root to `PYTHONPATH`, and configures Django using the `DJANGO_SETTINGS_MODULE` environment variable. It then tells Aspen to use Django's WSGI handler to serve all requests for this website.
+Stephane is trivial: 19 lines in 3 files. It is [http://www.zetadev.com/software/aspen/latest/doc/html/tutorial-learned.html an Aspen magic directory] pre-configured for Django. It includes a module called `grappelli` that adds the Aspen website root to `PYTHONPATH`, and configures Django using the `DJANGO_SETTINGS_MODULE` environment variable. It then tells Aspen to use Django's WSGI handler to serve all requests for this website.
 
-If `DJANGO_SETTINGS_MODULE` is unset, then it defaults to `stephane.settings`. You are also free to set this directly in [http://aspen-commons.googlecode.com/svn/stephane/trunk/__/lib/python2.x/grappelli.py __/lib/python2.x/grappelli.py].
+If `DJANGO_SETTINGS_MODULE` is unset, then it defaults to the value of `settings_module` in the `[django]` section of [http://aspen-commons.googlecode.com/svn/stephane/trunk/__/etc/aspen.conf __/etc/aspen.conf].
 
-Please see [http://aspen-commons.googlecode.com/svn/stephane/trunk/ the Stephane source] and [http://www.zetadev.com/software/aspen/0.7/doc/html/extending.html the "Extending Aspen" documentation] for a detailed understanding of how Stephane works.
+Please see [http://aspen-commons.googlecode.com/svn/stephane/trunk/ the Stephane source] and [http://www.zetadev.com/software/aspen/latest/doc/html/ the Aspen documentation] for a detailed understanding of how Stephane works.
 
 Stephane Grappelli was Django Reinhardt's long-time sideman and violin player.
+
+
+
+
