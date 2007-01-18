@@ -1,0 +1,6 @@
+Stephane is a tiny shim that makes it trivially easy to serve Django apps with 
+Aspen. Aspen is a Python webserver, a good fit for pure-HTTP Django deployment.
+
+  http://code.google.com/p/aspen-commons/wiki/Stephane
+  http://www.zetadev.com/software/aspen/
+  

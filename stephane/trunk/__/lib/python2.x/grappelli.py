@@ -5,23 +5,33 @@ import sys
 
 import aspen
 from django.core.handlers.wsgi import WSGIHandler
+from django.core.exceptions import ImproperlyConfigured
 
 
-DJANGO_SETTINGS_MODULE = 'stephane.settings' # change if you want
+# Put the site root on PYTHONPATH.
+# ================================
+
+sys.path.insert(0, aspen.paths.root)
 
 
 # Tell Django which settings to use.
 # ==================================
-# If you don't like the default project name above, I don't blame you. Change
-# it, or set DJANGO_SETTINGS_MODULE explicitly in aspen's environment.
+# If DJANGO_SETTINGS_MODULE is set, just use that. Otherwise, set it from 
+# aspen.conf.
 
 if not os.environ.has_key('DJANGO_SETTINGS_MODULE'):
-    os.environ['DJANGO_SETTINGS_MODULE'] = DJANGO_SETTINGS_MODULE
-sys.path.insert(0, aspen.paths.root)
+    settings_module = aspen.conf.django.get('settings_module', None)
+    if settings_module is None:
+        raise ImproperlyConfigured( "Please set DJANGO_SETTINGS_MODULE in the "
+                                  + "environment or settings_module in the "
+                                  + "[django] section of __/etc/aspen.conf."
+                                   )
+    else:
+        os.environ['DJANGO_SETTINGS_MODULE'] = settings_module
 
 
 # Instantiate Django's WSGI handler.
 # ==================================
-# This is then wired up to the site root in __/etc/apps.conf.
+# This is wired up to the website root in __/etc/apps.conf.
 
 django = WSGIHandler()
