@@ -1,0 +1,59 @@
+## Links ##
+
+| **download** | http://aspen-commons.googlecode.com/files/stephane-aspen-0.7-2.tgz |
+|:-------------|:-------------------------------------------------------------------|
+| **screencast** | http://tech.whit537.org/2006/12/screencast-django-aspen-stephane.html |
+
+` `
+
+# Introduction #
+
+Stephane is a tiny shim that makes it trivially easy to serve [Django](http://www.djangoproject.com/) apps with [Aspen](http://www.zetadev.com/software/aspen/).
+
+## Installation ##
+
+```
+$ mkdir ~/www.example.com
+$ cd ~/www.example.com
+$ django-admin.py startproject <foo>
+$ svn export http://aspen-commons.googlecode.com/svn/stephane/trunk/__
+```
+
+`~/www.example.com` will be on Django's `PYTHONPATH`, so you can include any third-party modules right next to your project package. Here's what your filesystem will look like:
+
+```
+~/www.example.com/             <= website root; added to PYTHONPATH
+~/www.example.com/__/          <= Stephane (an Aspen "magic directory")
+~/www.example.com/<foo>/       <= your Django project
+~/www.example.com/geopy/       <= any other modules you need
+~/www.example.com/README.aspen <= automatically added by Aspen
+```
+
+## Usage ##
+
+Now [install Aspen](http://www.zetadev.com/software/aspen/latest/doc/html/installation.html), and:
+
+```
+$ cd ~/www.example.com
+$ export DJANGO_SETTINGS_MODULE=<foo>.settings
+$ aspen
+launching child process
+starting child server
+aspen starting on ('0.0.0.0', 8080)
+```
+
+Congratulations! Aspen is running in [development mode](http://www.zetadev.com/software/aspen/latest/doc/html/environment.html), and will restart whenever your project files change.
+
+
+# Details #
+
+Stephane is trivial: 19 lines in 3 files. It is [an Aspen magic directory](http://www.zetadev.com/software/aspen/latest/doc/html/tutorial-learned.html) pre-configured for Django. It includes a module called `grappelli` that adds the Aspen website root to `PYTHONPATH`, and configures Django using the `DJANGO_SETTINGS_MODULE` environment variable. It then tells Aspen to use Django's WSGI handler to serve all requests for this website.
+
+If `DJANGO_SETTINGS_MODULE` is unset, then it defaults to the value of `settings_module` in the `[django]` section of [\_\_/etc/aspen.conf](http://aspen-commons.googlecode.com/svn/stephane/trunk/__/etc/aspen.conf).
+
+Please see [the Stephane source](http://aspen-commons.googlecode.com/svn/stephane/trunk/) and [the Aspen documentation](http://www.zetadev.com/software/aspen/latest/doc/html/) for a detailed understanding of how Stephane works.
+
+Stephane Grappelli was Django Reinhardt's long-time sideman and violin player.
+
+
+
